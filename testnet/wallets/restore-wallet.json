@@ -1,0 +1,4 @@
+{ "name": "Cardmix testing wallet"
+  , "mnemonic_sentence": ["word", "word", "word", "word", "word", "word", "word", "word", "word", "word", "word", "word", "word", "word", "word", "word", "word", "word", "word", "word", "word", "word", "word", "word"]
+  , "passphrase": "1234567890"
+  }
