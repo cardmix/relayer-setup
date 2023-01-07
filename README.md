@@ -1,3 +1,3 @@
-# ENCOINS Relayer app setup
+# ENCOINS Relay App setup
 
-A suite of scripts and config files to run an ENCOINS Relayer app.
+A suite of scripts and config files to run an ENCOINS Relay app.
