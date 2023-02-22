@@ -1,8 +1,8 @@
 #!/bin/bash
 
 cardano-node run \
-    --config        ../config.json \
-    --topology      ../topology.json \
+    --config        ../apps/cardano-node/config.json \
+    --topology      ../apps/cardano-node/topology.json \
     --database-path ../data/db \
-    --socket-path   ../node.sock \
+    --socket-path   ../apps/cardano-node/node.sock \
     --port          3003

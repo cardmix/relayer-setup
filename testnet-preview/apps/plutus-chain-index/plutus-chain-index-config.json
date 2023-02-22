@@ -5,8 +5,8 @@
   },
   "cicPort": 9083,
   "cicSecurityParam": 432,
-  "cicSocketPath": "../node.sock",
-  "cicDbPath": "../data/chain-index.db",
+  "cicSocketPath": "../cardano-node/node.sock",
+  "cicDbPath": "../../data/chain-index.db",
   "cicNetworkId": {
     "contents": {
       "unNetworkMagic": 2
