@@ -5,7 +5,7 @@
 , "protocol_parameters" : "../cardano-node/protocol-parameters.json"
 , "wallet_file"         : "../../wallets/wallet.json"
 , "auxiliary_env_file"  : "encs-params.json"
-, "network_id"          : "Mainnet"
+, "network_id"          : {"tag" : "Mainnet", "contents" : null}
 , "collateral"          : {"txOutRefId" : {"getTxId" : ""}, "txOutRefIdx" : 0}
 , "chain_index"         : "Kupo"
 , "inactive_endpoints"  :
