@@ -18,4 +18,4 @@ IMPORTANT: it is strongly recommended not to store large amounts of crypto in su
 
 ## encs
 
-* ENCS Distribution App requires a blockfrost token to run. You can get a free token at by registering at https://blockfrost.io/. Write you token in quotes in the "blockfrost.token" file inside "mainnet/apps/encs" folder (see "blockfrost.token.example" there).
+* Verifying distribution results requires a Blockfrost token to run. You can get a free token at by registering at https://blockfrost.io/. Write you token in quotes in the "blockfrost.token" file inside "mainnet/apps/encs" folder (see "blockfrost.token.example" there).
