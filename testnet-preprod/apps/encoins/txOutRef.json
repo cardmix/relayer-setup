@@ -1,3 +1,5 @@
-{ "txOutRefId"  : {"getTxId" : "4642e0b34efc6b475f99ca7ea39d1b15428090604d327946ed31324c71ab4846"}
+[{ "txOutRefId"  : {"getTxId" : "3ed05516c84cdf26677738e09620b34f835d8ae4e346ae12118dd03e13773f1b"}
 , "txOutRefIdx" : 0
-}
+}, { "txOutRefId"  : {"getTxId" : "e7d6c2b28cc978df14389ccb8a64a05da1e1586775a441f411225da3f66183c6"}
+, "txOutRefIdx" : 0
+}]
