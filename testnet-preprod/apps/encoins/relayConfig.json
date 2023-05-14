@@ -1,4 +1,4 @@
-{ "ref_stake_owner"  : {"txOutRefId"  : {"getTxId" : "43af97c50af3f4f01f23dc4462c33e7e3e6689b662fbd75edcb9fea0222f8e2c"}, "txOutRefIdx" : 1}
-, "ref_beacon"      : {"txOutRefId"  : {"getTxId" : "8c45de9f504c77bbc037d9eac2e7df618b019f829aefad6713d84d2dfe821e19"}, "txOutRefIdx" : 16}
+{ "ref_stake_owner"  : {"txOutRefId"  : {"getTxId" : "26069c2d1170dbebbc1ac5bb92587f4ed413b2db9c7b153a5f04e788c30671e5"}, "txOutRefIdx" : 1}
+, "ref_beacon"      : {"txOutRefId"  : {"getTxId" : "7f9764d1fe326738cd7eeaddbee149383785a847586bb51dd9cd69b8ef4c34ec"}, "txOutRefIdx" : 4}
 , "verifier_config" : "../verifier/verifierConfig.json"
 }
