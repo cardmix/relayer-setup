@@ -1,7 +1,7 @@
 testnet-preview/apps/cardano-node/node.sock
 testnet-preview/apps/encoins/logs/*
 testnet-preview/apps/encs/blockfrost.token
-testnet-preview/apps/encs/logs/*
+testnet-preview/apps/*/logs/*
 testnet-preview/data/
 testnet-preview/wallets/*
 !testnet-preview/wallets/wallet.json
@@ -10,7 +10,7 @@ testnet-preview/wallets/*
 testnet-preprod/apps/cardano-node/node.sock
 testnet-preprod/apps/encoins/logs/*
 testnet-preprod/apps/encs/blockfrost.token
-testnet-preprod/apps/encs/logs/*
+testnet-preprod/apps/*/logs/*
 testnet-preprod/data/
 testnet-preprod/wallets/*
 !testnet-preprod/wallets/wallet.json
@@ -19,7 +19,7 @@ testnet-preprod/wallets/*
 mainnet/apps/cardano-node/node.sock
 mainnet/apps/encoins/logs/*
 mainnet/apps/encs/blockfrost.token
-mainnet/apps/encs/logs/*
+mainnet/apps/*/logs/*
 mainnet/data/
 mainnet/wallets/*
 !mainnet/wallets/wallet.json
