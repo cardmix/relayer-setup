@@ -8,12 +8,5 @@
 , "network_id"          : {"tag" : "Testnet", "contents" : 2}
 , "collateral"          : {"txOutRefId" : {"getTxId" : ""}, "txOutRefIdx" : 0}
 , "chain_index"         : "Kupo"
-, "inactive_endpoints"  :
-    { "ping"          : false
-    , "funds"         : true
-    , "add_signature" : true
-    , "submit_tx"     : false
-    , "new_tx"        : false
-    , "server_tx"     : true
-    }
+, "active_endpoints"    : ["ping", "submitTx", "newTx"]
 }

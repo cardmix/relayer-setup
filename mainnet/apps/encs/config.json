@@ -8,12 +8,5 @@
 , "network_id"          : {"tag" : "Mainnet", "contents" : null}
 , "collateral"          : {"txOutRefId" : {"getTxId" : ""}, "txOutRefIdx" : 0}
 , "chain_index"         : "Kupo"
-, "inactive_endpoints"  :
-    { "ping"          : true
-    , "funds"         : true
-    , "add_signature" : true
-    , "submit_tx"     : true
-    , "new_tx"        : true
-    , "server_tx"     : true
-    }
+, "active_endpoints"    : []
 }
