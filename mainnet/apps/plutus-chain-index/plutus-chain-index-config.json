@@ -4,17 +4,17 @@
     "scSlotZeroTime": 1666656000
   },
   "cicPort": 9083,
-  "cicSecurityParam": 2160,
-  "cicSocketPath": "../cardano-node/node.sock",
-  "cicDbPath": "../../data/chain-index.db",
+  "cicSecurityParam": 1,
+  "cicSocketPath": "../apps/cardano-node/node.sock",
+  "cicDbPath": "../data/plutus-chain-index/chain-index.db",
   "cicNetworkId": {
     "contents": {
-      "unNetworkMagic": 2
     },
-    "tag": "Testnet"
+    "tag": "Mainnet"
   },
   "cicStoreFrom": {
     "unBlockNo": 0
   },
   "cicAppendTransactionQueueSize": 500
 }
+
