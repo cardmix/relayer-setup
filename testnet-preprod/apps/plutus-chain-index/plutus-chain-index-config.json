@@ -1,7 +1,7 @@
 {
   "cicSlotConfig": {
     "scSlotLength": 1000,
-    "scSlotZeroTime": 1666656000
+    "scSlotZeroTime": 1591566264000
   },
   "cicPort": 9083,
   "cicSecurityParam": 2160,
