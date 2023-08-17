@@ -4,7 +4,7 @@
 , "max_utxos_number"         : 1
 , "node_file_path"           : "../cardano-node/node.sock"
 , "protocol_parameters_file" : "../cardano-node/protocol-parameters.json"
-, "chain_index_config_file"  : "../plutus-chain-index/plutus-chain-index-config.json"
+, "slot_config_file"         : "../plutus-chain-index/plutus-chain-index-config.json"
 , "wallet_file"              : "../../wallets/Relay.json"
 , "auxiliary_env_file"       : "relayConfig.json"
 , "network_id"               : {"tag" : "Testnet", "contents" : 1}
