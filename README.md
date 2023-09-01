@@ -1,6 +1,15 @@
 # ENCOINS Tools
 A suite of scripts and config files to run ENCOINS backend applications.
 
+# Setup
+Setup script have been tested on clean Ubuntu 22.04.3 LTS with mininimal installation option. 
+In order to get all the applications necessary for encoins-relay, run the [setup.sh](https://github.com/encryptedcoins/encoins-tools/blob/main/setup.sh) script. Wait for cardano-node, cardano-wallet and kupo to fully sync.
+
+# Run
+* Make changes to the config files if necessary.
+* [Add your wallet](https://github.com/encryptedcoins/encoins-tools#cardano-wallet)
+* Launch [run.sh](https://github.com/encryptedcoins/encoins-tools/blob/main/run.sh) script.
+
 # Notes
 
 ## cardano-node
