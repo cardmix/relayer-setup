@@ -1,12 +1,34 @@
 #!/bin/bash
 
 cd mainnet/scripts
-unset GTK_PATH
-gnome-terminal --tab --title="kupo" -- bash -c "./kupo.sh"
-gnome-terminal --tab --title="cardano-wallet" -- bash -c "./wallet.sh"
-gnome-terminal --tab --title="cardano-node" -- bash -c "./node.sh"
+session="encoins-relay";
+tmux new-session -d -s $session;
+window=0;
+
+# Node
+tmux split-window -h;
+tmux send-keys -t $session:$window "./node.sh" C-m ENTER;
+
+# Kupo
+tmux split-window -v;
+tmux send-keys -t $session:$window "./kupo.sh" C-m ENTER;
+
+# Wallet
+tmux split-window -v -p 50;
+tmux send-keys -t $session:$window "./wallet.sh" C-m ENTER;
+
+# Load wallet
 cd ../wallets
-sleep 10 #Otherwise, the wallet.sh will not have time to initialize if the computer has just been restarted.
-./load_wallet.sh
+tmux split-window -v;
+tmux send-keys -t $session:$window "sleep 10" C-m ENTER;
+tmux send-keys -t $session:$window "./load_wallet.sh" C-m ENTER;
+tmux send-keys -t $session:$window "sleep 10" C-m ENTER;
+tmux send-keys -t $session:$window "tmux kill-pane -t 4" C-m ENTER;
+
+# Relay
 cd ../apps/encs
-encoins
+tmux select-pane -t 0
+tmux send-keys -t $session:$window "cd ../apps/encs" C-m ENTER;
+tmux send-keys -t $session:$window "encoins";
+
+tmux attach -t $session;

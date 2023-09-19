@@ -1,9 +1,9 @@
 #!/bin/bash
 
-mkdir -p $HOME/.local/bin/
-if [[ ! -d "$PATH" ]]; then 
+mkdir -p "$HOME/.local/bin/"
+if [[ ! -d "$PATH" ]]; then
     export PATH="$HOME/.local/bin/:$PATH"
-    echo 'export PATH="$HOME/.local/bin/:$PATH"' >> ~/.bashrc
+    echo "export PATH='$HOME/.local/bin/:$PATH'" >> ~/.bashrc
 fi
 
 #utils
@@ -22,14 +22,14 @@ git checkout dbb48cc
 make
 sudo make install
 
-if [[ ! -d $LD_LIBRARY_PATH ]]; then 
+if [[ ! -d $LD_LIBRARY_PATH ]]; then
     export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
-    echo 'export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"' >> ~/.bashrc
+    echo "export LD_LIBRARY_PATH='/usr/local/lib:$LD_LIBRARY_PATH'" >> ~/.bashrc
 fi
 
-if [[ ! -d "$PKG_CONFIG_PATH" ]]; then 
+if [[ ! -d "$PKG_CONFIG_PATH" ]]; then
     export PKG_CONFIG_PATH="usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
-    echo 'export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc
+    echo "export PKG_CONFIG_PATH='/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH'" >> ~/.bashrc
 fi
 cd ..
 
@@ -49,8 +49,8 @@ mkdir -p "cardano-wallet"
 cd cardano-wallet
 wget https://github.com/cardano-foundation/cardano-wallet/releases/download/v2023-04-14/cardano-wallet-v2023-04-14-linux64.tar.gz
 tar -xvzf cardano-wallet-v2023-04-14-linux64.tar.gz
-mv cardano-wallet-v2023-04-14-linux64/cardano-wallet $HOME/.local/bin/
-mv cardano-wallet-v2023-04-14-linux64/cardano-node $HOME/.local/bin/
+mv cardano-wallet-v2023-04-14-linux64/cardano-wallet "$HOME/.local/bin/"
+mv cardano-wallet-v2023-04-14-linux64/cardano-node "$HOME/.local/bin/"
 cd ..
 
 #kupo
@@ -59,24 +59,32 @@ cd kupo
 wget https://github.com/CardanoSolutions/kupo/releases/download/v2.6/kupo-2.6.1-amd64-Linux.tar.gz
 tar -xvzf kupo-2.6.1-amd64-Linux.tar.gz
 chmod +x bin/kupo
-mv bin/kupo $HOME/.local/bin/
+mv bin/kupo "$HOME/.local/bin/"
 cd ..
 
 #encoins-relay
 wget https://github.com/encryptedcoins/encoins-relay/releases/download/v1-rc1/encoins-relay-v1-rc1-linux64.tar.gz
 tar -xvzf encoins-relay-v1-rc1-linux64.tar.gz
 cd encoins-relay-v1-rc1-linux64
-mv encoins $HOME/.local/bin/
-mv encoins-client $HOME/.local/bin/
-mv encoins-poll $HOME/.local/bin/
-mv encoins-verifier $HOME/.local/bin/
+mv encoins "$HOME/.local/bin/"
+mv encoins-client "$HOME/.local/bin/"
+mv encoins-poll "$HOME/.local/bin/"
+mv encoins-verifier "$HOME/.local/bin/"
 cd ..
 
 #run scripts
 cd ..
 rm -f -r cardano-src
 cd mainnet/scripts
-unset GTK_PATH
-gnome-terminal --tab --title="kupo" -- bash -c "./kupo.sh"
-gnome-terminal --tab --title="cardano-wallet" -- bash -c "./wallet.sh"
-gnome-terminal --tab --title="cardano-node" -- bash -c "./node.sh"
+session="encoins-relay-server-setup";
+tmux new-session -d -s $session;
+window=0;
+tmux send-keys -t $session:$window "cd encoins-tools/mainnet/scripts" C-m ENTER;
+tmux send-keys -t $session:$window "./kupo.sh" C-m ENTER;
+tmux split-window -v;
+tmux send-keys -t $session:$window "cd encoins-tools/mainnet/scripts" C-m ENTER;
+tmux send-keys -t $session:$window "./wallet.sh" C-m ENTER;
+tmux split-window -v;
+tmux send-keys -t $session:$window "cd encoins-tools/mainnet/scripts" C-m ENTER;
+tmux send-keys -t $session:$window "./node.sh" C-m ENTER;
+tmux attach -t $session;
