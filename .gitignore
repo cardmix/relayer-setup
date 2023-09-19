@@ -1,3 +1,5 @@
+.history
+
 testnet-preview/apps/cardano-node/node.sock
 testnet-preview/apps/encs/blockfrost.token
 testnet-preview/apps/encoins/secrets/*
@@ -7,6 +9,7 @@ testnet-preview/wallets/*
 !testnet-preview/wallets/wallet.json
 !testnet-preview/wallets/load_wallet.sh
 testnet-preview/apps/encs/poll*files/*
+testnet-preview/apps/encs/savedResponses/*
 
 testnet-preprod/apps/cardano-node/node.sock
 testnet-preprod/apps/encs/blockfrost.token
@@ -17,6 +20,7 @@ testnet-preprod/wallets/*
 !testnet-preprod/wallets/wallet.json
 !testnet-preprod/wallets/load_wallet.sh
 testnet-preprod/apps/encs/poll*files/*
+testnet-preprod/apps/encs/savedResponses/*
 
 mainnet/apps/cardano-node/node.sock
 mainnet/apps/encs/blockfrost.token
@@ -27,3 +31,4 @@ mainnet/wallets/*
 !mainnet/wallets/wallet.json
 !mainnet/wallets/load_wallet.sh
 mainnet/apps/encs/poll*files/*
+mainnet/apps/encs/savedResponses/*
