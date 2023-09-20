@@ -1,4 +1,12 @@
-{ "ref_stake_owner"  : {"txOutRefId"  : {"getTxId" : "f8d3d464c5f1c789cf4b60ae48d332d84b1bacf4e9ff35bdee967566e3002ca8"}, "txOutRefIdx" : 1}
-, "ref_beacon"      : {"txOutRefId"  : {"getTxId" : "dc56884ecdcddc56cf45721bac3a3e6e6c4753464bc4be7a312c82f344c1e787"}, "txOutRefIdx" : 1}
-, "verifier_config" : "../verifier/verifierConfig.json"
+{ "ref_stake_owner"             : {"txOutRefId"  : {"getTxId" : "f8d3d464c5f1c789cf4b60ae48d332d84b1bacf4e9ff35bdee967566e3002ca8"}, "txOutRefIdx" : 1}
+, "ref_beacon"                  : {"txOutRefId"  : {"getTxId" : "dc56884ecdcddc56cf45721bac3a3e6e6c4753464bc4be7a312c82f344c1e787"}, "txOutRefIdx" : 1}
+, "verifier_pkh"                : ""
+, "verifier_host"               : ""
+, "verifier_port"               : 0
+, "bulletproof_setup_file_path" : "bulletproof_setup.json"
+, "delegation_folder"           : "delegations"
+, "delegation_min_token_amt"    : 0
+, "delegation_start"            : {"getSlot" : 0}
+, "delegation_currency_symbol"  : {"unCurrencySymbol" : ""}
+, "delegation_token_name"       : {"unTokenName" : "ENCS"}
 }
