@@ -63,9 +63,9 @@ mv bin/kupo "$HOME/.local/bin/"
 cd ..
 
 #encoins-relay
-wget https://github.com/encryptedcoins/encoins-relay/releases/download/v1-rc1/encoins-relay-v1-rc1-linux64.tar.gz
-tar -xvzf encoins-relay-v1-rc1-linux64.tar.gz
-cd encoins-relay-v1-rc1-linux64
+wget https://github.com/encryptedcoins/encoins-relay/releases/download/v1-rc2-beta/encoins-relay-v1-rc2-beta-linux64.tar.gz
+tar -xvzf encoins-relay-v1-rc2-beta-linux64.tar.gz
+cd encoins-relay-v1-rc2-beta-linux64
 mv encoins "$HOME/.local/bin/"
 mv encoins-client "$HOME/.local/bin/"
 mv encoins-poll "$HOME/.local/bin/"
