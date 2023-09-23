@@ -3,7 +3,6 @@
 , "verifier_pkh"                : ""
 , "verifier_host"               : ""
 , "verifier_port"               : 0
-, "bulletproof_setup_file_path" : "bulletproof_setup.json"
 , "delegation_folder"           : "delegations"
 , "delegation_min_token_amt"    : 0
 , "delegation_start"            : {"getSlot" : 87099336}
