@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd mainnet/scripts
+cd testnet-preprod/scripts
 session="encoins-relay";
 tmux new-session -d -s $session;
 window=0;
@@ -26,9 +26,9 @@ tmux send-keys -t $session:$window "sleep 10" C-m ENTER;
 tmux send-keys -t $session:$window "tmux kill-pane -t 4" C-m ENTER;
 
 # Relay
-cd ../apps/encs
+cd ../apps/encoins
 tmux select-pane -t 0
-tmux send-keys -t $session:$window "cd ../apps/encs" C-m ENTER;
-tmux send-keys -t $session:$window "encoins";
+tmux send-keys -t $session:$window "cd ../apps/encoins" C-m ENTER;
+tmux send-keys -t $session:$window "encoins run";
 
 tmux attach -t $session;

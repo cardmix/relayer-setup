@@ -1,4 +1,6 @@
-# Encoins-relay setup guide
+# Encoins-relay installation guide
+
+This guide is written for Ubuntu 22.04.3 LTS. To install the relayer on another OS, you might need to make some adjustments.
 
 1. Add ```.local/bin``` folder to path:
 
@@ -10,23 +12,24 @@ if [[ ! -d "$PATH" ]]; then
 fi
 ```
 
-2. Install next packages:
+2. Install the following packages:
 
 ```bash
 sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get install automake build-essential curl pkg-config libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev make g++ tmux git jq wget libtool autoconf libpq-dev -y
 ```
 
-3. Create temporary folder:
+3. Create a temporary folder:
 
 ```bash
-mkdir -p cardano-src
-cd cardano-src
+mkdir -p ~/cardano-src
+export CARDANO_SRC_PATH=~/cardano-src
 ```
 
 4. Install libsodium:
 
 ```bash
+cd $CARDANO_SRC_PATH
 git clone https://github.com/input-output-hk/libsodium
 cd libsodium
 git checkout dbb48cc
@@ -34,10 +37,9 @@ git checkout dbb48cc
 ./configure
 make
 sudo make install
-cd ..
 ```
 
-5. Export next path variables:
+5. Export path variables:
 
 ```bash
 if [[ ! -d $LD_LIBRARY_PATH ]]; then
@@ -54,6 +56,7 @@ fi
 6. Install libsecp256k1:
 
 ```bash
+cd ~/cardano-src
 git clone https://github.com/bitcoin-core/secp256k1
 cd secp256k1
 git checkout ac83be33
@@ -62,62 +65,83 @@ git checkout ac83be33
 make
 make check
 sudo  make install
-cd ..
+cd ~/cardano-src
 ```
 
 7. Install cardano-node and cardano-wallet:
 
 ```bash
+cd $CARDANO_SRC_PATH
 mkdir -p "cardano-wallet"
 cd cardano-wallet
 wget https://github.com/cardano-foundation/cardano-wallet/releases/download/v2023-04-14/cardano-wallet-v2023-04-14-linux64.tar.gz
 tar -xvzf cardano-wallet-v2023-04-14-linux64.tar.gz
 mv cardano-wallet-v2023-04-14-linux64/cardano-wallet "$HOME/.local/bin/"
 mv cardano-wallet-v2023-04-14-linux64/cardano-node "$HOME/.local/bin/"
-cd ..
 ```
 
-8. Install kupo:
+8. Install Kupo:
 
 ```bash
+cd $CARDANO_SRC_PATH
 mkdir -p "kupo"
 cd kupo
 wget https://github.com/CardanoSolutions/kupo/releases/download/v2.6/kupo-2.6.1-amd64-Linux.tar.gz
 tar -xvzf kupo-2.6.1-amd64-Linux.tar.gz
 chmod +x bin/kupo
 mv bin/kupo "$HOME/.local/bin/"
-cd ..
+cd ~/cardano-src
 ```
 
 9. Install encoins-relay:
 
 ```bash
-wget https://github.com/encryptedcoins/encoins-relay/releases/download/v1-rc2-beta/encoins-relay-v1-rc2-beta-linux64.tar.gz
-tar -xvzf encoins-relay-v1-rc2-beta-linux64.tar.gz
-cd encoins-relay-v1-rc2-beta-linux64
+cd $CARDANO_SRC_PATH
+wget https://github.com/encryptedcoins/encoins-relay/releases/download/v1/encoins
 mv encoins "$HOME/.local/bin/"
-mv encoins-client "$HOME/.local/bin/"
-mv encoins-poll "$HOME/.local/bin/"
-mv encoins-verifier "$HOME/.local/bin/"
-cd ..
 ```
 
-10. Delete temporary folder and start cardano-wallet, cardano-node and kupo synchronization:
+10. Delete the temporary folder. and start cardano-wallet, cardano-node and kupo synchronization:
 
 ```bash
-cd ..
-rm -f -r cardano-src
-cd mainnet/scripts
-session="encoins-relay-server-setup";
+rm -f -r $CARDANO_SRC_PATH
+```
+
+11. Clone encoins-tools repository:
+```bash
+cd ~
+git clone https://github.com/encryptedcoins/encoins-tools.git
+export ENCOINS_TOOLS_PATH=~/encoins-tools
+```
+
+12. Start cardano-node and Kupo synchronization:
+```bash
+cd $ENCOINS_TOOLS_PATH
+session="encoins-relay";
 tmux new-session -d -s $session;
 window=0;
-tmux send-keys -t $session:$window "cd encoins-tools/mainnet/scripts" C-m ENTER;
-tmux send-keys -t $session:$window "./kupo.sh" C-m ENTER;
-tmux split-window -v;
-tmux send-keys -t $session:$window "cd encoins-tools/mainnet/scripts" C-m ENTER;
-tmux send-keys -t $session:$window "./wallet.sh" C-m ENTER;
-tmux split-window -v;
-tmux send-keys -t $session:$window "cd encoins-tools/mainnet/scripts" C-m ENTER;
+tmux send-keys -t $session:$window "cd testnet-preprod/scripts/" C-m ENTER;
 tmux send-keys -t $session:$window "./node.sh" C-m ENTER;
+tmux split-window -v;
+tmux send-keys -t $session:$window "cd testnet-preprod/scripts/" C-m ENTER;
+tmux send-keys -t $session:$window "./kupo.sh" C-m ENTER;
 tmux attach -t $session;
 ```
+
+13. To properly shut down, use ```ctrl + c``` to close the individual apps. Then use ```ctrl + b + d``` to detach tmux. Finally, kill the tmux session with
+```bash
+tmux kill-session -t encoins-relay
+```
+
+14. Create a Cardano wallet for your relayer. You can use any browser wallet interface to do so.
+
+15.  Go to ```testnet-preprod/wallets``` directory and edit the mnemonic phrase in ```wallet-example.json``` file to your wallet mnemonics. Save as "wallet.json".
+```bash 
+cd $ENCOINS_TOOLS_PATH/testnet-preprod/wallets
+nano wallet.json
+```
+
+16. Make sure to open port 3000 on your relayer machine. You will not be able to receive user requests otherwise.
+
+Now you are ready to run the ENCOINS Relayer!
+

@@ -1,14 +1,14 @@
 # ENCOINS Tools
-A suite of scripts and config files to run ENCOINS backend applications.
+A suite of scripts and config files to run the ENCOINS backend applications.
 
-# Setup
-Setup script have been tested on clean Ubuntu 22.04.3 LTS with mininimal installation option. 
-In order to get all the applications necessary for encoins-relay, run the [setup.sh](https://github.com/encryptedcoins/encoins-tools/blob/main/setup.sh) script. Wait for cardano-node, cardano-wallet and kupo to fully sync.
+# Installation
+In order to setup all the necessary applications for encoins-relay, consult the installation guide [here](https://github.com/encryptedcoins/encoins-tools/blob/main/INSTALL.md). The guide has been tested on a clean Ubuntu 22.04.3 LTS with the mininimal installation option.
 
 # Run
 * Make changes to the config files if necessary.
 * [Add your wallet](https://github.com/encryptedcoins/encoins-tools#cardano-wallet)
-* Launch [run.sh](https://github.com/encryptedcoins/encoins-tools/blob/main/run.sh) script.
+* Launch the [run.sh](https://github.com/encryptedcoins/encoins-tools/blob/main/run.sh) script or use the guide [here](https://github.com/encryptedcoins/encoins-tools/blob/main/RUN.md).
+* After executing ```encoins run```, make sure that port 3000 is accessible from the outside. You can test port accessibility [here](https://www.yougetsignal.com/tools/open-ports/).
 
 # Notes
 
@@ -20,7 +20,7 @@ In order to get all the applications necessary for encoins-relay, run the [setup
 
 ## cardano-wallet
 
-* Backend wallets are stored in the "wallets" folder. Change the `mnemonic_senstence` in the "wallet.json" file to the seed phrase of your backend wallet.
+* Backend wallets are stored in the "wallets" folder. Change the `mnemonic_senstence` in the "wallet-example.json" file to the seed phrase of your backend wallet and save it as "wallet.json".
 * To start a cardano-wallet app, go to "scripts" folder and run `./wallet.sh`.
 
 IMPORTANT: it is strongly recommended not to store large amounts of crypto in such backend wallets.

@@ -6,7 +6,7 @@ testnet-preview/apps/encoins/secrets/*
 testnet-preview/apps/*/logs/*
 testnet-preview/data/
 testnet-preview/wallets/*
-!testnet-preview/wallets/wallet.json
+!testnet-preview/wallets/wallet-example.json
 !testnet-preview/wallets/load_wallet.sh
 testnet-preview/apps/encs/poll*files/*
 testnet-preview/apps/encs/savedResponses/*
@@ -18,7 +18,7 @@ testnet-preprod/apps/encoins/secrets/*
 testnet-preprod/apps/*/logs/*
 testnet-preprod/data/
 testnet-preprod/wallets/*
-!testnet-preprod/wallets/wallet.json
+!testnet-preprod/wallets/wallet-example.json
 !testnet-preprod/wallets/load_wallet.sh
 testnet-preprod/apps/encs/poll*files/*
 testnet-preprod/apps/encs/savedResponses/*
@@ -30,7 +30,7 @@ mainnet/apps/encoins/secrets/*
 mainnet/apps/*/logs/*
 mainnet/data/
 mainnet/wallets/*
-!mainnet/wallets/wallet.json
+!mainnet/wallets/wallet-example.json
 !mainnet/wallets/load_wallet.sh
 mainnet/apps/encs/poll*files/*
 mainnet/apps/encs/savedResponses/*
