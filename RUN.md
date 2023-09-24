@@ -1,6 +1,6 @@
 # Encoins-relay run guide
 
-Assuming you followed the installation guide, all necessary backend apps should be installed and on PATH. First, make an environment variable for the encoins-tools folder:
+Assuming you followed the installation guide, all the necessary backend apps should be installed and on PATH. Make an environment variable for the encoins-tools folder:
 ```bash
 export ENCOINS_TOOLS_PATH=~/encoins-tools
 ```
@@ -12,7 +12,7 @@ IMPORTANT: Make sure to open port 3000 on your relayer machine. You will not be 
 1. In the terminal, move to the  ```testnet-preprod/scripts``` folder:
 
 ```code
-cd ENCOINS_TOOLS_PATH/testnet-preprod/scripts
+cd $ENCOINS_TOOLS_PATH/testnet-preprod/scripts
 ```
 
 2. Start a new tmux session:
@@ -53,7 +53,7 @@ cd ../wallets
 {"address_pool_gap":20,"assets":{"available":[],"total":[]},"balance":{"available":{"quantity":0,"unit":"lovelace"},"reward":{"quantity":0,"unit":"lovelace"} ...
 ```
 
-8. Wait until cardano-wallet is fully [synchronized](https://github.com/encryptedcoins/encoins-tools/blob/main/run.md#When-is-cardano-walleet-fully-synchronized?).
+8. Wait until cardano-wallet is fully [synchronized](https://github.com/encryptedcoins/encoins-tools/blob/main/RUN.md#When-is-cardano-wallet-fully-synchronized?).
 
 9. Now select your first pan with ```ctrl + b q 0```, go to ```../apps/encs``` directory and run encoins-relay:
 ```tmux
@@ -70,11 +70,11 @@ tmux kill-session -t encoins-relay
 
 1. Move to the encoins-tools folder and execute ```run.sh```.
 
-2. Wait until cardano-wallet is fully [synchronized](https://github.com/encryptedcoins/encoins-tools/blob/main/run.md#When-is-cardano-walleet-fully-synchronized?).
+2. Wait until cardano-wallet is fully [synchronized](https://github.com/encryptedcoins/encoins-tools/blob/main/RUN.md#When-is-cardano-wallet-fully-synchronized?).
 
 3. Press enter.
 
-## When is cardano-walleet fully synchronized?
+## When is cardano-wallet fully synchronized?
 
 When you see message like this:
 

@@ -56,7 +56,7 @@ fi
 6. Install libsecp256k1:
 
 ```bash
-cd ~/cardano-src
+cd $CARDANO_SRC_PATH
 git clone https://github.com/bitcoin-core/secp256k1
 cd secp256k1
 git checkout ac83be33
@@ -65,7 +65,6 @@ git checkout ac83be33
 make
 make check
 sudo  make install
-cd ~/cardano-src
 ```
 
 7. Install cardano-node and cardano-wallet:
@@ -90,7 +89,6 @@ wget https://github.com/CardanoSolutions/kupo/releases/download/v2.6/kupo-2.6.1-
 tar -xvzf kupo-2.6.1-amd64-Linux.tar.gz
 chmod +x bin/kupo
 mv bin/kupo "$HOME/.local/bin/"
-cd ~/cardano-src
 ```
 
 9. Install encoins-relay:
@@ -101,7 +99,7 @@ wget https://github.com/encryptedcoins/encoins-relay/releases/download/v1/encoin
 mv encoins "$HOME/.local/bin/"
 ```
 
-10. Delete the temporary folder. and start cardano-wallet, cardano-node and kupo synchronization:
+10. Delete the temporary folder.
 
 ```bash
 rm -f -r $CARDANO_SRC_PATH
@@ -128,20 +126,20 @@ tmux send-keys -t $session:$window "./kupo.sh" C-m ENTER;
 tmux attach -t $session;
 ```
 
-13. To properly shut down, use ```ctrl + c``` to close the individual apps. Then use ```ctrl + b + d``` to detach tmux. Finally, kill the tmux session with
+13. To properly shut down, use ```ctrl + c``` to close the individual apps. Then use ```ctrl + b + d``` to detach tmux. Finally, kill the tmux session with the following command:
 ```bash
 tmux kill-session -t encoins-relay
 ```
 
-14. Create a Cardano wallet for your relayer. You can use any browser wallet interface to do so.
-
-15.  Go to ```testnet-preprod/wallets``` directory and edit the mnemonic phrase in ```wallet-example.json``` file to your wallet mnemonics. Save as "wallet.json".
+14. Create a Cardano wallet for your relayer. You can use any browser wallet interface to do so. Go to ```testnet-preprod/wallets``` directory and edit the mnemonic phrase in ```wallet-example.json``` file to your wallet mnemonics. Save as "wallet.json".
 ```bash 
 cd $ENCOINS_TOOLS_PATH/testnet-preprod/wallets
 nano wallet.json
 ```
 
-16. Make sure to open port 3000 on your relayer machine. You will not be able to receive user requests otherwise.
+15. Make sure to open port 3000 on your relayer machine. You will not be able to receive user requests otherwise.
 
 Now you are ready to run the ENCOINS Relayer!
+
+Consult the [RUN.md](https://github.com/encryptedcoins/encoins-tools/blob/main/RUN.md) guide next.
 
