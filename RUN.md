@@ -55,7 +55,7 @@ cd ../wallets
 
 8. Wait until cardano-wallet is fully [synchronized](https://github.com/encryptedcoins/encoins-tools/blob/main/RUN.md#When-is-cardano-wallet-fully-synchronized?).
 
-9. Now select your first pan with ```ctrl + b q 0```, go to ```../apps/encs``` directory and run encoins-relay:
+9. Now select your first pan with ```ctrl + b q 0```, go to ```../apps/encoins``` directory and run encoins-relay:
 ```tmux
 cd ../apps/encoins
 encoins run
