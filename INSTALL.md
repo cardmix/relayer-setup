@@ -1,6 +1,6 @@
 # Encoins-relay installation guide
 
-This guide is written for Ubuntu 22.04.3 LTS. To install the relayer on another OS, you might need to make some adjustments.
+This guide is written for a clean Ubuntu 22.04.3 LTS (minimal installation option). To install the relayer on another OS, you might need to make some adjustments.
 
 1. Add ```.local/bin``` folder to path:
 
