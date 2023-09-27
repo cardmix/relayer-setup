@@ -76,7 +76,8 @@ cd cardano-wallet
 wget https://github.com/cardano-foundation/cardano-wallet/releases/download/v2023-04-14/cardano-wallet-v2023-04-14-linux64.tar.gz
 tar -xvzf cardano-wallet-v2023-04-14-linux64.tar.gz
 mv cardano-wallet-v2023-04-14-linux64/cardano-wallet "$HOME/.local/bin/"
-mv cardano-wallet-v2023-04-14-linux64/cardano-node "$HOME/.local/bin/"
+wget https://github.com/encryptedcoins/encoins-relay/releases/download/v1/cardano-node
+mv cardano-node "$HOME/.local/bin/"
 ```
 
 8. Install Kupo:
