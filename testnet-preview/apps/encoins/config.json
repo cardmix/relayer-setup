@@ -3,7 +3,7 @@
 , "max_utxos_number"    : 10
 , "node_file_path"      : "../cardano-node/node.sock"
 , "protocol_parameters" : "../cardano-node/protocol-parameters.json"
-, "wallet_file"         : "../../wallets/Relay.json"
+, "wallet_file"         : "../../wallets/wallet.json"
 , "auxiliary_env_file"  : "txOutRef.json"
 , "network_id"          : {"tag" : "Testnet", "contents" : 2}
 , "collateral"          : {"txOutRefId" : {"getTxId" : ""}, "txOutRefIdx" : 0}
