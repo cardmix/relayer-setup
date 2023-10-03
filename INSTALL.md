@@ -138,7 +138,9 @@ cd $ENCOINS_TOOLS_PATH/testnet-preprod/wallets
 nano wallet.json
 ```
 
-15. Make sure to open port 3000 on your relayer machine. You will not be able to receive user requests otherwise.
+15. Deposit 20-30 tADA into your backend wallet address.
+
+16. Make sure to open port 3000 on your relayer machine. You will not be able to receive user requests otherwise.
 
 Now you are ready to run the ENCOINS Relayer!
 
